@@ -18,5 +18,4 @@ dag = DAG('dag_test', default_args=default_args)
 
 t1 = BashOperator(
     task_id='task_1',
-    bash_command='python /Users/jcrasto/airflow_poc/scripts/data_creator.py',
-    dag=dag)
+    bash_command='python /Users/jcrasto/airflow_poc/scripts/data_creator.py')
