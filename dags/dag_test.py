@@ -1,5 +1,5 @@
 from airflow import DAG
-from airflow.operators import BashOperator
+from airflow.operators import BashOperator, PythonOperator
 from datetime import datetime, timedelta
 
 # Following are defaults which can be overridden later on
@@ -15,3 +15,8 @@ default_args = {
 }
 
 dag = DAG('dag_test', default_args=default_args)
+
+t1 = BashOperator(
+    task_id='task_1',
+    bash_command='python /Users/jcrasto/airflow_poc/scripts/data_creator.py',
+    dag=dag)
