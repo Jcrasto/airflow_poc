@@ -3,6 +3,11 @@ import os
 import logging
 
 if __name__ == "__main__":
+    logging.basicConfig(
+        format='%(asctime)s %(levelname)-8s %(message)s',
+        level=logging.INFO,
+        datefmt='%Y-%m-%d %H:%M:%S')
+
     session = boto3.session.Session()
     s3_client = session.client('s3')
 
